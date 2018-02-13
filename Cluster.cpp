@@ -40,7 +40,6 @@ Cluster::Cluster(String file,int clusters_) {
 
 	}
 	Mat result(image.rows,image.cols,CV_8UC3);
-	cout<<"2"<<endl;
 	for(int i = 0;i<result.rows;i++)
 		for(int j = 0;j<result.cols;j++){
 			result.at<cv::Vec3b>(i,j)[1] = pixels[i][j].G;
@@ -79,7 +78,6 @@ void Cluster::execute(){
 }
 void Cluster::show(){
 	Mat result(image.rows,image.cols,CV_8UC3);
-	cout<<"2"<<endl;
 	for(int i = 0;i<result.rows;i++)
 		for(int j = 0;j<result.cols;j++){
 			result.at<cv::Vec3b>(i,j)[0] = means[clusters[make_pair(i,j)]].G;
@@ -92,7 +90,6 @@ void Cluster::show(){
 		}
 
 	Mat clustercolors(means.size()*50,100,CV_8UC3);
-	cout<<"2"<<endl;
 	for(int i = 0;i<clustercolors.rows;i++)
 		for(int j = 0;j<clustercolors.cols;j++){
 			clustercolors.at<cv::Vec3b>(i,j)[1] = means[i/50].B;
@@ -139,7 +136,6 @@ void Cluster::updateMeans(){
 
 	}
 	Mat result(image.rows,image.cols,CV_8UC3);
-	cout<<"2"<<endl;
 	for(int i = 0;i<result.rows;i++)
 		for(int j = 0;j<result.cols;j++){
 			result.at<cv::Vec3b>(i,j)[1] = means[clusters[make_pair(i,j)]].B;

@@ -10,7 +10,7 @@
 int main(){
 	srand(time(NULL));
 
-	Cluster cluster("/home/potato/Pictures/sample2.jpg",10);
+	Cluster cluster("Lenna.png",20);
 
 	cluster.execute();
 
